@@ -10,6 +10,12 @@
 <h1 align="center">Real-Time Object Detection & Tracking System</h1>
 
 <p align="center">
+  <video src="https://github.com/Pratham-Sangurdekar/VyoriusDronesAssignment/raw/main/My%20Movie%203.mp4" controls autoplay muted loop width="720">
+    Your browser does not support the video tag.
+  </video>
+</p>
+
+<p align="center">
   <b>YOLOv8 detection · DeepSORT tracking · UDP video streaming · Live web dashboard</b>
 </p>
 
