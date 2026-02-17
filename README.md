@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/UDP-Streaming-orange" />
 </p>
 
-<h1 align="center">🎯 Real-Time Object Detection & Tracking System</h1>
+<h1 align="center">Real-Time Object Detection & Tracking System</h1>
 
 <p align="center">
   <b>YOLOv8 detection · DeepSORT tracking · UDP video streaming · Live web dashboard</b>
@@ -19,9 +19,9 @@
   and streams the annotated feed to a sleek browser-based dashboard.
 </p>
 
----
 
-## 📋 Table of Contents
+
+## Table of Contents
 
 - [Features](#-features)
 - [Architecture](#-architecture)
@@ -44,37 +44,37 @@
 - [Performance](#-performance)
 - [Troubleshooting](#-troubleshooting)
 
----
 
-## ✨ Features
+
+## Features
 
 | Feature | Description |
 |:--------|:-----------|
-| **🔍 Real-Time Detection** | YOLOv8n (nano) running at **15-30 FPS** on CPU — detects 6 object classes out of the box |
-| **🏷️ Persistent Tracking** | DeepSORT with MobileNet appearance embedder assigns **unique IDs** that survive occlusion |
-| **🔀 Trajectory Trails** | Last 30 frame positions drawn as coloured polylines so you can see movement paths |
-| **📹 Live Web Dashboard** | Beautiful dark-themed browser UI at `localhost:5050` with MJPEG stream + live metrics |
-| **📡 UDP Video Streaming** | Server → Client architecture with custom fragmented packet protocol |
-| **⚙️ Fully Configurable** | Single `config.py` controls everything — model, thresholds, classes, ports, colours |
-| **🔄 Occlusion Handling** | Kalman filter prediction keeps tracks alive for 30 frames when objects are temporarily hidden |
-| **📊 Live Metrics** | FPS, object count, and frame counter updated in real time on the web UI |
+| **Real-Time Detection** | YOLOv8n (nano) running at **15-30 FPS** on CPU — detects 6 object classes out of the box |
+| **Persistent Tracking** | DeepSORT with MobileNet appearance embedder assigns **unique IDs** that survive occlusion |
+| **Trajectory Trails** | Last 30 frame positions drawn as coloured polylines so you can see movement paths |
+| **Live Web Dashboard** | Beautiful dark-themed browser UI at `localhost:5050` with MJPEG stream + live metrics |
+| **UDP Video Streaming** | Server → Client architecture with custom fragmented packet protocol |
+| **Fully Configurable** | Single `config.py` controls everything — model, thresholds, classes, ports, colours |
+| **Occlusion Handling** | Kalman filter prediction keeps tracks alive for 30 frames when objects are temporarily hidden |
+| **Live Metrics** | FPS, object count, and frame counter updated in real time on the web UI |
 
 ### Detected Object Classes
 
 | Class | COCO ID | Box Colour |
 |:------|:--------|:-----------|
-| 🧑 Person | 0 | Green |
-| 🚲 Bicycle | 1 | Orange |
-| 🚗 Car | 2 | Blue |
-| 🏍️ Motorcycle | 3 | Magenta |
-| 🚌 Bus | 5 | Cyan |
-| 🚛 Truck | 7 | Yellow |
+| Person | 0 | Green |
+| Bicycle | 1 | Orange |
+| Car | 2 | Blue |
+| Motorcycle | 3 | Magenta |
+| Bus | 5 | Cyan |
+| Truck | 7 | Yellow |
 
 > Easily add more by editing `TARGET_CLASSES` in `config.py` — YOLO supports all 80 COCO classes!
 
----
 
-## 🏗 Architecture
+
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -100,7 +100,7 @@
                                                 │
                                                 ▼
                                     ┌───────────────────┐
-                                    │   🌐 Browser       │
+                                    │      Browser       │
                                     │   Live Dashboard   │
                                     │   • Video stream   │
                                     │   • FPS counter    │
@@ -121,9 +121,9 @@ stream_server.py                          stream_client.py
                                           localhost:5050
 ```
 
----
 
-## 🛠 Tech Stack
+
+## Tech Stack
 
 | Component | Technology | Purpose |
 |:----------|:-----------|:--------|
@@ -135,23 +135,23 @@ stream_server.py                          stream_client.py
 | **Protocol** | Custom UDP | Fragmented packet streaming with metadata headers |
 | **Language** | Python 3.10+ | Everything |
 
----
 
-## 📁 Project Structure
+
+## Project Structure
 
 ```
 VyoriusDronesAssignment/
 │
-├── app.py               # 🚀 Main entry — live web view (recommended)
-├── detector.py          # 🔍 ObjectDetector class (YOLOv8 wrapper)
-├── tracker.py           # 🏷️ ObjectTracker class (DeepSORT + trajectories)
-├── config.py            # ⚙️  All configuration in one place
+├── app.py               # Main entry — live web view (recommended)
+├── detector.py          # ObjectDetector class (YOLOv8 wrapper)
+├── tracker.py           # ObjectTracker class (DeepSORT + trajectories)
+├── config.py            #  All configuration in one place
 │
-├── stream_server.py     # 📡 UDP streaming server (alternative mode)
-├── stream_client.py     # 📺 UDP streaming client + web dashboard
+├── stream_server.py     # UDP streaming server (alternative mode)
+├── stream_client.py     # UDP streaming client + web dashboard
 │
-├── requirements.txt     # 📦 Python dependencies
-└── README.md            # 📖 You are here!
+├── requirements.txt     # Python dependencies
+└── README.md            # You are here!
 ```
 
 ### Module Breakdown
@@ -164,9 +164,9 @@ VyoriusDronesAssignment/
 | `config.py` | Constants | All tunables: model, thresholds, classes, ports, colours |
 | `app.py` | Pipeline + Flask | Background thread: capture→detect→track→annotate→JPEG; Flask serves MJPEG |
 
----
 
-## 🚀 Getting Started
+
+## Getting Started
 
 ### Prerequisites
 
@@ -200,11 +200,11 @@ python app.py
 
 Then open **http://localhost:5050** in your browser. That's it! 🎉
 
----
+
 
 ## 📖 Usage Guide
 
-### 🌐 Live Web View (Recommended)
+### Live Web View (Recommended)
 
 The simplest way — one command, everything in your browser:
 
@@ -223,11 +223,11 @@ python app.py --embedder none
 ```
 
 Open **http://localhost:5050** (or your custom port) and you'll see:
-- 📹 Live annotated video with bounding boxes, track IDs, and trajectory trails
-- 📊 Real-time FPS, object count, and frame counter
-- 🎨 Dark-themed responsive dashboard
+- Live annotated video with bounding boxes, track IDs, and trajectory trails
+- Real-time FPS, object count, and frame counter
+- Dark-themed responsive dashboard
 
-### 📡 UDP Streaming Mode
+### UDP Streaming Mode
 
 For a distributed setup (server on one machine, client on another):
 
@@ -270,9 +270,9 @@ Then open **http://localhost:5050** to view the received stream.
 | `--web-port` | `5050` | Web dashboard port |
 | `--web-host` | `0.0.0.0` | Web bind address |
 
----
 
-## ⚙️ Configuration Reference
+
+## Configuration Reference
 
 All tunables in **`config.py`**:
 
@@ -315,9 +315,9 @@ All tunables in **`config.py`**:
 | `CLASS_COLORS` | See config | BGR colour dict per class |
 | `WEB_PORT` | `5050` | Browser dashboard port |
 
----
 
-## 🔬 How It Works
+
+## How It Works
 
 ### 1. Object Detection
 
@@ -383,9 +383,8 @@ Custom binary packet format for network streaming:
 
 **Fragmentation:** Frames exceeding the max datagram size are split into numbered chunks and reassembled on the client. Incomplete frames older than 500ms are discarded (graceful packet-loss handling).
 
----
 
-## ⚡ Performance
+## Performance
 
 ### Benchmarks (Apple M-series CPU)
 
@@ -410,9 +409,7 @@ Custom binary packet format for network streaming:
 | GPU acceleration | Set `YOLO_DEVICE = "cuda:0"` (NVIDIA) or `"mps"` (Apple Silicon) |
 | Smaller model | Already using YOLOv8n (smallest). Goes up to `yolov8x.pt` for accuracy |
 
----
-
-## 🔧 Troubleshooting
+## Troubleshooting
 
 | Problem | Solution |
 |:--------|:--------|
@@ -424,8 +421,3 @@ Custom binary packet format for network streaming:
 | **UDP packets not arriving** | Check `sysctl net.inet.udp.maxdgram` on macOS (default 9216) |
 | **Black/blank video in browser** | Ensure the pipeline thread started — check terminal for `[pipeline] Running` |
 
----
-
-<p align="center">
-  Built with ❤️ for the Vyorius Drones Assignment
-</p>
