@@ -9,11 +9,9 @@
 
 <h1 align="center">Real-Time Object Detection & Tracking System</h1>
 
-<div align="center">
-
-https://github.com/Pratham-Sangurdekar/VyoriusDronesAssignment/raw/main/My%20Movie%203.mp4
-
-</div>
+<p align="center">
+  <img src="demo.gif" alt="Demo – real-time object detection & tracking" width="720" />
+</p>
 
 <p align="center">
   <b>YOLOv8 detection · DeepSORT tracking · UDP video streaming · Live web dashboard</b>
